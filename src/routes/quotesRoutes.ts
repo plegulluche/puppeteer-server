@@ -1,6 +1,6 @@
 import express from "express";
 
-import generatePDF from "../controllers/quoteControllers";
+import { generatePDF } from "../controllers/quoteControllers";
 import { Url } from "../types/url";
 
 // Create a router object from Express.
@@ -26,7 +26,7 @@ router.post("/generate-pdf", async (req, res) => {
 
     // Call the generatePDF function, passing the URL string.
     // This function is expected to return a PDF file in a Buffer format.
-    const pdfBuffer = await generatePDF(url.toString());
+    const pdfBuffer = await generatePDF(url);
 
     // Set the Content-Type of the response to 'application/pdf'.
     // This tells the client that the server is returning a PDF file.
