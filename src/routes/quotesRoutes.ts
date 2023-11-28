@@ -1,23 +1,22 @@
-import express from 'express';
+import express from "express";
 
-import generatePDF from 'src/controllers/quoteControllers';
-import { Url } from 'src/types/url';
+import generatePDF from "../controllers/quoteControllers";
+import { Url } from "../types/url";
 
-
-// Create a router object from Express. 
+// Create a router object from Express.
 // This router will handle all requests coming to the '/quotes' endpoint.
 const router = express.Router();
 
 // Define a POST route for '/generate-pdf'.
 // This route will be used to receive a URL and return a PDF generated from that URL.
-router.post('/generate-pdf', async (req, res) => {
+router.post("/generate-pdf", async (req, res) => {
   try {
-    // Extract the URL from the request body. 
+    // Extract the URL from the request body.
     // Expecting the client to send a JSON object with a 'url' property.
     const urlStr = req.body.url;
     if (!urlStr) {
       // If no URL is provided in the request, return a 400 Bad Request error.
-      return res.status(400).send({ error: 'URL is required' });
+      return res.status(400).send({ error: "URL is required" });
     }
 
     // Create a new Url object using the provided URL string.
@@ -31,14 +30,17 @@ router.post('/generate-pdf', async (req, res) => {
 
     // Set the Content-Type of the response to 'application/pdf'.
     // This tells the client that the server is returning a PDF file.
-    res.contentType('application/pdf');
+    res.contentType("application/pdf");
 
     // Send the PDF Buffer as the response.
     res.send(pdfBuffer);
   } catch (error) {
-    res.status(500).send({ error: error.message });
+    let errorMessage = "An unknown error occurred";
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    res.status(500).send({ error: errorMessage });
   }
 });
-
 
 export default router;

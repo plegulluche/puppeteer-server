@@ -18,6 +18,12 @@ app.use(cors(corsOptions))
 // MIDDLEWARES //
 
 // ROUTES //
+
+// ROOT ROUTE //
+app.get('/', (req,res) => {
+  res.send('Welcome to the MS node server')
+})
+
 app.use('/quotes', quotesRouter)
 
 export default app

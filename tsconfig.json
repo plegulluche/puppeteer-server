@@ -7,6 +7,9 @@
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "resolveJsonModule": true
+    "strict": true,
+    "resolveJsonModule": true,  // This allows importing JSON modules directly in your TypeScript code, which can be handy.
+    "esModuleInterop": true, // If you're using modules that are not ESModules, you might want to set "esModuleInterop": true. This provides a smoother experience when importing CommonJS modules.
+    "skipLibCheck": true // It can speed up your compilation if you're not concerned about the types in your dependencies.
   }
 }
