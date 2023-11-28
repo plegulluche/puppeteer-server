@@ -9,7 +9,20 @@ export class Url {
     constructor(url: string) {
         this.url = url;
         // Immediately validate the URL when an instance is created.
-        this.validate();
+        this.validateForDev();   // change for validate in production
+    }
+
+    // A temporary validation method for development purposes
+    private validateForDev(): void {
+        const validUrlPrefixes = [
+            'https://',
+            'http//127.0.0.1'
+        ];
+        const isValidUrl = validUrlPrefixes.some(prefix => this.url.startsWith(prefix));
+        if (!isValidUrl) {
+            // If the URL is not valid, throw an error.
+            throw new Error('Invalid URL prefix');
+        }
     }
 
     // The validate method checks if the URL starts with the required prefixes.
