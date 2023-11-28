@@ -1,10 +1,23 @@
-import { Request, Response } from "express";
+import express from "express"
+import cors from 'cors'
 
-const express = require('express');
+import quotesRouter from './routes/quotesRoutes'
+
+
 const app = express();
+const corsOptions = {
+  origin: process.env.CLIENT_URL,
+  credential: true
+}
 
-app.get('/', function (req: Request, res: Response) {
-  res.send('Hello World!');
-});
+// INITIALIZE //
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+app.use(cors(corsOptions))
 
-app.listen(3000);
+// MIDDLEWARES //
+
+// ROUTES //
+app.use('/quotes', quotesRouter)
+
+export default app
