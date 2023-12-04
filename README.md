@@ -12,6 +12,7 @@ This server is a dedicated Node.js server used in conjunction with two Next.js a
 - Node.js (versions 18 or 20 recommended for compatibility)
 - Yarn as the package manager
 - Any standard code editor
+- Any tool like postman or thunderclient to test endpoints
 
 ### Installation
 
@@ -46,11 +47,11 @@ Use Postman or a similar tool to test the API endpoint.
 
 ### Upcoming Features
 
-- **CORS Configuration:** Setting up CORS for development and production environments.
-- **Deployment Instructions:** Guidelines for deploying the server.
+- ~~**CORS Configuration:** Setting up CORS for development and production environments.~~
+- **Deployment Instructions:** Guidelines for deploying the server. ( ONGOING)
 - **Eslint Configuration & Code Normalization:** Implementing Eslint for coding standards.
 - **API Documentation with Swagger:** Creating Swagger-based API documentation.
-- **Environment Variable Management:** Managing environment variables for different setups.
+- ~~**Environment Variable Management:** Managing environment variables for different setups.~~
 - **Enhancements in Puppeteer Usage:** Customizing Puppeteer for specific functionalities.
 
 ### Integration Plans
