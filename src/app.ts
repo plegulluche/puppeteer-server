@@ -7,6 +7,7 @@ import quotesRouter from './routes/quotesRoutes'
 const app = express();
 const corsOptions = {
   origin: process.env.CLIENT_URL,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   credential: true
 }
 
