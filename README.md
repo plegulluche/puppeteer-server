@@ -29,7 +29,9 @@ Set the following environment variables:
 
 ### Running the Server
 
-To start the server in development mode, run `yarn dev`. A message should appear in the console indicating that the server is running on port 4000. Ensure CORS configuration is correctly set up for communication with the server from different sources.
+- To see the production deployment instructions see [Deploy on EC2](./deployement-instructions.md)
+
+- To start the server in development mode, run `yarn dev`. A message should appear in the console indicating that the server is running on port 4000. Ensure CORS configuration is correctly set up for communication with the server from different sources.
 
 ## Usage
 
@@ -48,7 +50,7 @@ Use Postman or a similar tool to test the API endpoint.
 ### Upcoming Features
 
 - ~~**CORS Configuration:** Setting up CORS for development and production environments.~~
-- **Deployment Instructions:** Guidelines for deploying the server. ( ONGOING)
+- ~~**Deployment Instructions:** Guidelines for deploying the server.~~ 
 - **Eslint Configuration & Code Normalization:** Implementing Eslint for coding standards.
 - **API Documentation with Swagger:** Creating Swagger-based API documentation.
 - ~~**Environment Variable Management:** Managing environment variables for different setups.~~
