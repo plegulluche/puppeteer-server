@@ -1,6 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from '../swaggerConfig';
+
 import quotesRouter from './routes/quotesRoutes';
 
 const app = express();
@@ -14,6 +17,9 @@ const corsOptions = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(corsOptions));
+
+// SWAGGER SETUP //
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // MIDDLEWARES //
 
