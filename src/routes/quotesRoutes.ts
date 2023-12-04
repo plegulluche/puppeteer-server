@@ -7,8 +7,36 @@ import { Url } from '../types/url';
 // This router will handle all requests coming to the '/quotes' endpoint.
 const router = express.Router();
 
-// Define a POST route for '/generate-pdf'.
-// This route will be used to receive a URL and return a PDF generated from that URL.
+/**
+ * @openapi
+ * /quotes/generate-pdf:
+ *   post:
+ *     summary: Generate a PDF from a URL
+ *     description: Receives a URL and returns a generated PDF.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - url
+ *             properties:
+ *               url:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Returns the generated PDF.
+ *         content:
+ *           application/pdf:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       400:
+ *         description: Bad request, URL is required.
+ *       500:
+ *         description: Server error.
+ */
 router.post('/generate-pdf', async (req, res) => {
   try {
     // Extract the URL from the request body.
