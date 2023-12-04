@@ -1,4 +1,3 @@
-
 # Node Server for Puppeteer Processes
 
 ## Overview
@@ -38,7 +37,7 @@ Set the following environment variables:
 Currently, the server supports the following endpoint:
 
 - **Generate PDF:** `POST http://localhost:4000/generate-pdf`
-  
+
   Payload: A JSON object containing a `url` key with a valid URL string. This endpoint uses Puppeteer to generate a PDF from the provided webpage URL.
 
 ### Testing
@@ -50,8 +49,9 @@ Use Postman or a similar tool to test the API endpoint.
 ### Upcoming Features
 
 - ~~**CORS Configuration:** Setting up CORS for development and production environments.~~
-- ~~**Deployment Instructions:** Guidelines for deploying the server.~~ 
+- ~~**Deployment Instructions:** Guidelines for deploying the server.~~
 - **Eslint Configuration & Code Normalization:** Implementing Eslint for coding standards.
+- **Setup CD pipeline:** Create an action to redeploy on pull request on master.
 - **API Documentation with Swagger:** Creating Swagger-based API documentation.
 - ~~**Environment Variable Management:** Managing environment variables for different setups.~~
 - **Enhancements in Puppeteer Usage:** Customizing Puppeteer for specific functionalities.
