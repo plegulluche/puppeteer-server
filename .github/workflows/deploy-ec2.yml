@@ -21,7 +21,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14' # Specify your Node.js version here
+        node-version: '21.3.0' # Specify your Node.js version here
 
     # This step will SSH into your EC2 instance and execute deployment commands
     - name: SSH and Deploy
@@ -29,9 +29,9 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }} # Your EC2 instance's IP or hostname
         username: ${{ secrets.EC2_USERNAME }} # EC2 instance username
-        key: ${{ secrets.EC2_SSH_KEY }} # SSH key for the EC2 instance
+        key: ${{ secrets.NODE_SERVER_SSH_KEY }} # SSH key for the EC2 instance
         script: |
-          cd /path/to/your/node/app # Change to your app's directory
+          cd /home/ubuntu/ms-node-server # Change to your app's directory
           git pull origin master
-          npm install # Install dependencies
+          yarn # Install dependencies
           pm2 restart all # Restart the app using PM2
