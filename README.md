@@ -51,7 +51,7 @@ Use Postman or a similar tool to test the API endpoint.
 - ~~**CORS Configuration:** Setting up CORS for development and production environments.~~
 - ~~**Deployment Instructions:** Guidelines for deploying the server.~~
 - ~~**Eslint Configuration & Code Normalization:** Implementing Eslint for coding standards.~~
-- **Setup CD pipeline:** Create an action to redeploy on pull request on master.(ONGOING)
+- **Setup CD pipeline:** Create an action to redeploy on pull request on master.(TESTING)
 - ~~**API Documentation with Swagger:** Creating Swagger-based API documentation.~~
 - ~~**Environment Variable Management:** Managing environment variables for different setups.~~
 - **Enhancements in Puppeteer Usage:** Customizing Puppeteer for specific functionalities.

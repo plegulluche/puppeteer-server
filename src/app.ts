@@ -5,6 +5,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from '../swaggerConfig';
 
 import quotesRouter from './routes/quotesRoutes';
+import checkRouter from './routes/healthCheck';
 
 const app = express();
 const corsOptions = {
@@ -24,12 +25,11 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 // MIDDLEWARES //
 
 // ROUTES //
-
+app.use('/check', checkRouter);
+app.use('/quotes', quotesRouter);
 // ROOT ROUTE //
 app.get('/', (req, res) => {
   res.send('Welcome to the MS node server');
 });
-
-app.use('/quotes', quotesRouter);
 
 export default app;
