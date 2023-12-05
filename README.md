@@ -52,6 +52,7 @@ Use Postman or a similar tool to test the API endpoint.
 - ~~**Deployment Instructions:** Guidelines for deploying the server.~~
 - ~~**Eslint Configuration & Code Normalization:** Implementing Eslint for coding standards.~~
 - **Setup CD pipeline:** Create an action to redeploy on pull request on master.(TESTING)
+- **Setup webserver to accept https:** Setup Nginx on the ec2.
 - ~~**API Documentation with Swagger:** Creating Swagger-based API documentation.~~
 - ~~**Environment Variable Management:** Managing environment variables for different setups.~~
 - **Enhancements in Puppeteer Usage:** Customizing Puppeteer for specific functionalities.
